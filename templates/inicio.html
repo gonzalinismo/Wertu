@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+	<div class="intro col l12 s12">
+		<ul id="slide-out" class="sidenav sidenav-fixed z-depth-2">
+			<li class="center"><h5>OPCIONES</h5></li>
+			<li><a href="/misTiendas">Mis tiendas</a></li>
+			<li><a href="/miPerfil">Mi perfil</a></li>
+			<li><a href="/misPagos">Mis Pagos</a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#!"></a></li>
+		</ul>
+		
+		<div class="container saracatunga">
+			{% block opcion %}
+        	{% endblock %}
+		</div>
+	</div><br>		
+{% endblock %}

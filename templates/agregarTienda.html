@@ -1,0 +1,12 @@
+{% extends 'inicio.html' %}
+{% block opcion %}
+{% load staticfiles %}
+<div class="container">
+<h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ tienda_form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+</div>	
+{% endblock %}

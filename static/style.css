@@ -1,0 +1,75 @@
+body{
+	background-color: #121212;
+
+}
+
+p,h1,h2,h3,h4,h5{
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.saracatunga{
+      padding-left: 200px;      	    	      
+    }
+
+    @media only screen and (max-width : 992px) {
+      .saracatunga{
+        padding-left: 0;
+      }
+    }
+
+.brand-logo{
+	height: 100px;
+	margin-top: -20px;
+}
+
+.divider{
+	background-color:  #00dc90;
+}
+.nav-wrapper {
+	background-color: #10201a;
+    position: relative;    
+}
+.sidenav, .sidenav-fixed{
+	margin-top: 65px;
+	background-color: #10201a !important;
+	width:200px
+}
+
+.sidenav li>a{
+	text-decoration: none;
+	color: white;
+}
+.main{
+	margin-top: 3%;
+}
+
+.divider-vertical{
+	height: 30px;
+}
+.container{
+	width: 90%;
+}
+
+.btn{
+	background-color: #00784F;
+	color: #ffffff;
+}
+
+.section{
+	background-color: rgba(0,0,0,0.4);
+}
+
+.material-icons, .enlace-verde{
+	color: #00dc90;
+}
+
+.carousel-slider, .carousel, .carousel-item{
+	/*width: 200px;*/
+	height: 300px ;
+	min-height: none !important;
+}
+
+.card{
+	margin-top: 30px;
+}

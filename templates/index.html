@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+<!-- bienvenida -->
+	{% if user.is_authenticated %}
+		
+	{% else %}
+	<div class="row container">
+		<div class="col l7 s12 container section z-depth-4">
+			<h2>Bienvenido a Wertü</h2><br><br><br><br><br>
+			<h5>Registrá tu local y llegá a mas gente que nunca!</h5>
+			<p>solo tenes que ingresar tus datos, crear tu perfil y ya sos accesible</p>
+			<a class="btn left" href="usuarios/register">Registrarme</a>					
+		</div>
+		<div class="col l1 divider-vertical"></div>
+		<div class="col l4 s12  container section z-depth-4">
+			<img class="responsive-img right" src="{% static '/pics/logo-white-large.png' %}">
+		</div>
+		<!-- separador vertical-->
+		<div class="col l1 divider-vertical"></div>
+		<div class="divider col l12 s12"></div>
+		<div class="col l1 divider-vertical"></div>
+		<!-- separador vertical -->
+		<!-- planes -->
+		<div class="col l12 s12  container section z-depth-4">
+			<h3>Planes</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
+		</div>
+	</div>
+	{% endif %}
+						
+{% endblock %}

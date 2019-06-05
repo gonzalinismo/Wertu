@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">	
+	<title>Wertu</title>
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>                
+    <!--  font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+</head>
+<body>
+	<div class="navbar-fixed">		
+		<nav>
+		    <div class="nav-wrapper z-depth-2 ">
+		    	{% if user.is_authenticated %}
+		    		<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		    	{% endif %}
+				<img class="brand-logo center" src="{% static '/pics/logo-text.png' %}">
+				<ul class="right">	      	
+					{% if user.is_authenticated %}
+						<a href="usuarios/logout">Cerrar Sesion</a>
+					{% else %}
+						<a href="usuarios/user_login">Iniciar Sesion</a>	  			
+					{% endif %}
+				</ul>
+		    </div>
+		</nav>	
+	</div>		
+	<div class="row main">
+		{% block content %}
+        {% endblock %}
+	</div>
+
+</body>
+<script type="text/javascript">
+	  M.AutoInit();        
+
+    
+    
+</script>
+</html>
