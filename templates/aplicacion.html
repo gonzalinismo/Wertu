@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">	
+	<meta name="theme-color" content="#00dc90">
+	<title>Wertu</title>
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>                
+    <!--  font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	{% load static %}
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+</head>
+<body>
+	<div class="navbar-fixed">		
+		<nav>
+		    <div class="nav-wrapper z-depth-2 ">		    	
+	    		<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		    	
+				<img class="brand-logo center" src="{% static '/pics/logo-text.png' %}">				
+		    </div>
+		</nav>	
+	</div>
+	<!-- SIDENAV -->
+	<ul id="slide-out" class="sidenav sidenav-fixed z-depth-2">
+		<li class="center"><h5>CATEGORIAS</h5></li>
+		{% for categoria in categorias %}				
+			<li><a href="/filtrarTiendas/{{categoria.idCategoriaTienda}}">{{categoria}}</a></li>
+		{% endfor %}
+	</ul>	
+			<!-- CONTENIDO -->
+	<div class="row main">
+		<div class="intro col l12 s12">
+			<div class="container saracatunga">
+				<h2 class="center">{{categoriaElegida}}</h2>
+				<div class="row cardboard">
+					<!-- Crea cada tarjeta -->
+					{% for tienda in tiendas%}		
+						<div class="tienda col l4 s12">
+							<!-- TARJETA -->
+							<div class="card z-depth-2">
+								<!-- IMAGENES -->
+								<div class="waves-effect waves-block waves-light z-depth-4 container">
+									<div class="carousel carousel-slider">							
+										<img class="carousel-item " src="{% static '/pics/logo-principal.png' %}">
+										<img class="carousel-item " src="{% static '/pics/logo-principal.png' %}">
+									</div>		
+								</div>
+								<!-- CONTENIDO -->
+								<div class="card-content activator">
+									<span class="card-title activator grey-text text-darken-4">{{ tienda.nombreTienda }}<!-- <i class="material-icons right">info_outline</i> --></span>
+									<p><a href="#">Distancia en metros</a></p>
+									<p class="grey-text">ultima vez</p>
+								</div>
+								<div class="card-reveal">
+									<span class="card-title grey-text text-darken-4">{{ tienda.nombreTienda }}<i class="material-icons right">close</i></span>
+									<span>{{tienda.bio}}</span>
+									<a href="{{tienda.face}}">facebook</a><br>
+									<a href="{{tienda.insta}}">Instagram</a>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>	
+			</div>
+		</div><br>		
+		
+	</div>
+
+</body>
+<script type="text/javascript">
+	M.AutoInit();        
+</script>
+</html>
