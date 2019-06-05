@@ -73,3 +73,12 @@ p,h1,h2,h3,h4,h5{
 .card{
 	margin-top: 30px;
 }
+
+input{
+	background-color: white;
+	color: white;
+}
+
+.input-field [type=text] {
+    color: white;
+}
